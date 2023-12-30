@@ -18,6 +18,13 @@ function carregarJogos() {
         "02 40 23 42 16 57", "06 04 35 41 53 58", "11 28 39 03 45 56"
     ];
 
+    jogos = jogos.map(jogo => {
+    return jogo.split(" ")
+               .map(numero => parseInt(numero, 10))
+               .sort((a, b) => a - b)
+               .join(" ");
+});
+
     let divListaJogos = document.getElementById('lista-jogos');
     jogos.forEach(jogo => {
         let div = document.createElement('div');
